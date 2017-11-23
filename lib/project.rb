@@ -7,7 +7,10 @@ class Project
 
   def add_backer(backer)
     self.backers << backer
-    backer.back_project(self)
-    backer
+    if backer.back_project.!include?(self)
+      backer.back_project(self)
+    else
+      backer
+    end
   end
 end
