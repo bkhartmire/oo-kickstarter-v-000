@@ -7,7 +7,7 @@ class Backer
 
   def back_project(project)
     self.backed_projects << project
-    if project.backers.none?(self)
+    if (project.backers.none?(self))
       project.add_backer(self)
     else
       project
